@@ -27,33 +27,43 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  const sections = [
+    { id: "about", label: "À propos" },
+    { id: "skills", label: "Compétences" },
+    { id: "projects", label: "Projets" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 bg-white p-5 transition-shadow duration-300 ${hasShadow ? "shadow-md" : "shadow-none"
-        }`}
+      className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 bg-white p-5 transition-shadow duration-300 ${
+        hasShadow ? "shadow-md" : "shadow-none"
+      }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("home")}
-          className="h-9 cursor-pointer"
-          src="/assets/logo.svg"
-          alt="Logo"
-        />
+          <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      onClick={() => scrollToSection("home")}
+      className="cursor-pointer text-xl font-extrabold select-none"
+    >
+      Mouhlal Akram
+    </motion.div>
 
+
+        {/* Menu Desktop */}
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
-          {["about", "skills", "projects", "contact"].map((section) => (
+          {sections.map((section) => (
             <motion.li
-              key={section}
+              key={section.id}
               className="group"
               whileHover={{ scale: 1.1 }}
             >
-              <button onClick={() => scrollToSection(section)}>
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+              <button onClick={() => scrollToSection(section.id)}>
+                {section.label}
               </button>
               <motion.span
                 className="w-0 transition-all duration-300 group-hover:w-full h-[2px] bg-black flex"
@@ -63,17 +73,20 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Bouton CV */}
         <motion.a
-          href=""
+          href="/cv.pdf"
+          download
           className="hidden relative lg:inline-block px-4 py-2 font-medium group"
         >
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
           <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
           <span className="relative text-black group-hover:text-white flex items-center gap-x-3">
-            Resume <TbDownload size={16} />
+            Télécharger CV <TbDownload size={16} />
           </span>
         </motion.a>
 
+        {/* Bouton Menu Mobile */}
         <motion.button
           className="lg:hidden text-2xl"
           onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +96,7 @@ export default function Navbar() {
         </motion.button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menu Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -100,26 +113,27 @@ export default function Navbar() {
               <HiX />
             </button>
             <ul className="flex flex-col items-start ml-16 mt-28 h-full gap-y-6 font-semibold">
-              {["about", "skills", "projects", "contact"].map((section) => (
+              {sections.map((section) => (
                 <motion.li
-                  key={section}
+                  key={section.id}
                   className="border-b"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <button onClick={() => scrollToSection(section)}>
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  <button onClick={() => scrollToSection(section.id)}>
+                    {section.label}
                   </button>
                 </motion.li>
               ))}
               <motion.a
-                href=""
+                href="/cv.pdf"
+                download
                 className="relative inline-block px-4 py-2 font-semibold group"
                 whileHover={{ scale: 1.1 }}
               >
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                 <span className="relative text-black group-hover:text-white flex items-center gap-x-3">
-                  Resume <TbDownload size={16} />
+                  Télécharger CV <TbDownload size={16} />
                 </span>
               </motion.a>
             </ul>

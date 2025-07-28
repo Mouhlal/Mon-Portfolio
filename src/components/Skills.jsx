@@ -1,49 +1,70 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase,FaJava } from "react-icons/fa";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { RiNextjsFill,RiTailwindCssFill } from "react-icons/ri";
-import { CgFigma } from "react-icons/cg";
+import { FaJs, FaReact, FaNodeJs, FaPython, FaJava, FaLaravel, FaPhp, FaSymfony, FaHtml5, FaLinux, FaDocker } from "react-icons/fa";
+import { DiDjango, DiMongodb } from "react-icons/di";
+import { SiMysql, SiTypescript } from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { HiCommandLine } from "react-icons/hi2";
+import { GrOracle } from "react-icons/gr";
+import { TbBrandCpp } from "react-icons/tb";
 
 export default function Skills() {
   const [skills] = useState([
-    { id: 1, name: "JavaScript", icon: <FaJs size={50} /> },
-    { id: 2, name: "React", icon: <FaReact size={50} /> },
-    { id: 3, name: "Node.js", icon: <FaNodeJs size={50} /> },
-    { id: 4, name: "Python", icon: <FaPython size={50} /> },
-    { id: 5, name: "MongoDB", icon: <FaDatabase size={50} /> },
-    { id: 6, name: "Java", icon: <FaJava size={50} /> },
-    { id: 7, name: "Postgresql", icon: <BiLogoPostgresql size={50} /> },
-    { id: 8, name: "Next.js", icon: <RiNextjsFill size={50} /> },
-    { id: 9, name: "Tailwind", icon: <RiTailwindCssFill size={50} /> },
-    { id: 10, name: "Figma", icon: <CgFigma size={50} /> },
+    { id: 1, name: "Laravel", icon: <FaLaravel size={50} /> },
+    { id: 2, name: "Php", icon: <FaPhp size={50} /> },
+    { id: 3, name: "React", icon: <FaReact size={50} /> },
+    { id: 4, name: "Node.js", icon: <FaNodeJs size={50} /> },
+    { id: 5, name: "Python", icon: <FaPython size={50} /> },
+    { id: 6, name: "Django", icon: <DiDjango size={50} /> },
+    { id: 7, name: "MongoDB", icon: <DiMongodb size={50} /> },
+    { id: 8, name: "Java", icon: <FaJava size={50} /> },
+    { id: 9, name: "MySQL", icon: <SiMysql size={50} /> },
+    { id: 10, name: "Next.js", icon: <RiNextjsFill size={50} /> },
+    { id: 11, name: "Typescript", icon: <SiTypescript size={50} /> },
+    { id: 12, name: "Tailwind", icon: <RiTailwindCssFill size={50} /> },
+    { id: 13, name: "JavaScript", icon: <FaJs size={50} /> },
+    { id: 14, name: "Docker", icon: <FaDocker size={50} /> },
+    { id: 15, name: "C++", icon: <TbBrandCpp size={50} /> },
+    { id: 16, name: "Symfony", icon: <FaSymfony size={50} /> },
+    { id: 17, name: "HTML5", icon: <FaHtml5 size={50} /> },
+    { id: 18, name: "Linux", icon: <FaLinux size={50} /> },
+    { id: 19, name: "Command Line", icon: <HiCommandLine size={50} /> },
+    { id: 20, name: "Oracle", icon: <GrOracle size={50} /> },
   ]);
 
   const [experiences] = useState([
     {
       id: 1,
-      company: "Google",
-      role: "Lead Software Engineer",
-      period: "Nov 2019 - Present",
+      company: "SG2i Consulting",
+      role: "Stagiaire Développeur Full-Stack",
+      period: "Juillet 2025",
       description:
-        "Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience.",
-      logo: "/assets/google.svg",
+        "Participation au développement d’applications web au sein d’une équipe projet. Contribution à la conception et à l’optimisation d’une solution de gestion des réservations, tout en renforçant mes compétences en Next.js et en technologies modernes du web.",
+      logo: "https://sg2i.com/wp-content/uploads/2025/02/SG2I-2-scaled.jpg", 
     },
     {
       id: 2,
-      company: "Youtube",
-      role: "Software Engineer",
-      period: "Jan 2017 - Oct 2019",
+      company: "Freelance",
+      role: "Développeur Full-Stack",
+      period: "2024 – 2025",
       description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
-      logo: "/assets/youtube.svg",
+        "Réalisation du projet Nutstree (nutstree.ma), un site e-commerce complet pour la vente de fruits secs au Maroc. Intégration d’un système de paiement en ligne, gestion du panier et interface moderne avec Tailwind CSS, Laravel, MySQL.",
+      logo: "https://cdn.dribbble.com/userupload/22808646/file/original-cd940b45bbed325d172547e4181e59b2.jpg", 
+    },
+    {
+      id: 3,
+      company: "ModitelCom (Orange)",
+      role: "Stagiaire Développeur Web",
+      period: "Mars 2024",
+      description:
+      "Stage d’observation d’un mois, axé sur la découverte des processus de développement web et l’intégration de solutions numériques au sein de l’entreprise.",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg", 
     },
   ]);
 
   return (
     <div className="mt-3 lg:mt-16" id="skills">
       <div className="px-5 lg:px-28">
-
         <motion.h2
           className="text-2xl lg:text-4xl text-center"
           initial={{ opacity: 0, y: -20 }}
@@ -51,7 +72,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          My <span className="font-extrabold">Skills</span>
+          Mes <span className="font-extrabold">Compétences</span>
         </motion.h2>
 
         {/* Skill Cards */}
@@ -70,7 +91,6 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-
       </div>
 
       {/* Experience Section */}
@@ -82,7 +102,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          My <span className="font-extrabold">Experience</span>
+          Mon <span className="font-extrabold">Expérience</span>
         </motion.h2>
 
         {/* Experience Cards */}
@@ -103,9 +123,9 @@ export default function Skills() {
             >
               <div className="flex justify-between flex-col items-start lg:flex-row lg:items-center">
                 <div className="flex items-center gap-5">
-                  <img className="w-7" src={exp.logo} alt="" />
+                  <img className="w-7" src={exp.logo} alt={exp.company} />
                   <h2 className="font-semibold text-white text-lg lg:text-xl">
-                    {exp.role} at {exp.company}
+                    {exp.role} chez {exp.company}
                   </h2>
                 </div>
                 <span className="text-[#D4D4D8] font-semibold text-sm mt-4 lg:mt-0 lg:text-base">
@@ -118,7 +138,6 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </div>
   );

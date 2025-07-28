@@ -10,6 +10,7 @@ export default function Home() {
     <div className="mt-20" id="home">
       <div className="flex justify-between py-10 items-center px-5 lg:px-28 lg:flex-row flex-col-reverse">
 
+        {/* Section Texte */}
         <motion.div
           className="lg:w-[45%]"
           initial={{ opacity: 0, x: -50 }}
@@ -31,16 +32,16 @@ export default function Home() {
             }}
           >
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              Hello, <TypeAnimation
+              Bonjour, <TypeAnimation
                 sequence={[
-                  'I am Sathish Kumar',
-                  1000,
-                  // 'I am a Web Developer',
-                  // 1000,
-                  // 'I am a UI/UX Designer',
-                  // 1000,
+                  "Je suis Mouhlal Akram",
+                  1500,
+                 /*  "Développeur Full Stack",
+                  1500, */
+                 /*  "Passionné par le Web",
+                  1500, */
                 ]}
-                speed={10}
+                speed={50}
                 style={{ fontWeight:600 }}
                 repeat={Infinity}
               />
@@ -54,9 +55,9 @@ export default function Home() {
                 Developer
               </span>
             </motion.h2>
-            <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              Based In <span className="font-extrabold">India.</span>
-            </motion.h2>
+            {/* <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
+              Basé au <span className="font-extrabold">Maroc.</span>
+            </motion.h2> */}
           </motion.div>
 
           <motion.p
@@ -65,19 +66,29 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Passionate about technology, I specialize in Web Development and Web Designing. I’m focused on building innovative solutions and continuously expanding my skills. My goal is to grow as a developer and contribute to impactful projects in the tech industry.
+            Développeur Full Stack passionné, spécialisé en React.js, Laravel, et Tailwind CSS. 
+            Je conçois des applications modernes et performantes, en cherchant toujours 
+            à améliorer mes compétences et à contribuer à des projets innovants.
           </motion.p>
 
+          {/* Liens Réseaux Sociaux */}
           <motion.div
             className="flex items-center gap-x-5 mt-10 lg:mt-14"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            {[BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub].map((Icon, index) => (
+            {[
+              { Icon: BiLogoGmail, link: "mailto:akramemouhlal@gmail.com" },
+              { Icon: IoLogoLinkedin, link: "https://www.linkedin.com/in/akram-mouhlal-755b42291/" },
+              /* { Icon: IoLogoTwitter, link: "https://twitter.com/tonprofil" }, */
+              { Icon: BsGithub, link: "https://github.com/Mouhlal" }
+            ].map(({ Icon, link }, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white p-2 lg:p-3 rounded border-2 border-black"
                 whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
                 whileTap={{ scale: 0.9 }}
@@ -88,13 +99,14 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
+        {/* Section Image */}
         <motion.div
           className="lg:w-[55%] w-full"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <img className="h-full w-full" src="/assets/hero-vector.svg" alt="Hero Vector" />
+          <img className="h-full w-full" src="/assets/hero-vector.svg" alt="Illustration Portfolio" />
         </motion.div>
       </div>
     </div>

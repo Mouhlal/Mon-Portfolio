@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <div className="px-5 lg:px-28 flex justify-between flex-col lg:flex-row" id="about">
+      
+      {/* Image Section */}
       <motion.div
         className="lg:w-1/2"
         initial={{ opacity: 0, x: -50 }}
@@ -11,9 +13,10 @@ export default function About() {
         transition={{ type: "spring", stiffness: 80, damping: 10 }}
         viewport={{ once: true }}
       >
-        <img src="/assets/about-me.svg" alt="About Me Illustration" />
+        <img src="/assets/about-me.svg" alt="Illustration de moi" />
       </motion.div>
 
+      {/* Texte Section */}
       <motion.div
         className="lg:w-1/2"
         initial={{ opacity: 0, x: 50 }}
@@ -22,19 +25,27 @@ export default function About() {
         viewport={{ once: true }}
       >
         <h2 className="lg:text-4xl text-2xl mt-4 lg:mt-0">
-          About <span className="font-extrabold">Me</span>
+          À propos de <span className="font-extrabold">Moi</span>
         </h2>
 
         <p className="text-[#71717A] text-sm/6 lg:text-base mt-5 lg:mt-10">
-          I'm a passionate full-stack developer specializing in **React.js & Node.js**. I thrive on blending technical expertise with sleek UI/UX design to build high-performing, user-friendly applications.
+          Je m’appelle <span className="font-bold">Mouhlal Akram</span>, 
+          un développeur full-stack passionné spécialisé en <strong>React.js, Laravel et Django</strong>. 
+          Mon objectif est de créer des applications modernes, performantes et adaptées aux besoins des utilisateurs.
         </p>
 
         <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
-          My web development journey started in **2015**, and since then, I've continuously evolved, taking on new challenges and keeping up with the latest technologies. Today, I build **cutting-edge web applications** using **Next.js, TypeScript, NestJS, TailwindCSS, Supabase, and more**.
+          Mon parcours en développement web a commencé en <strong>2021</strong> et, depuis, 
+          j’ai acquis de l’expérience sur différents projets : 
+          <strong> sites e-commerce, systèmes de gestion scolaire, et applications web interactives</strong>. 
+          J’aime relever de nouveaux défis et apprendre les dernières technologies.
         </p>
 
         <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
-          Beyond coding, I enjoy sharing insights on **Twitter**, engaging with **Indie Hackers**, and following the journey of **early-stage startups**. Feel free to follow me on **Twitter** or check out my projects on **GitHub**.
+          En dehors du codage, je partage mes connaissances, j’explore les innovations du numérique, 
+          et je participe à des projets collaboratifs. 
+          Vous pouvez découvrir mes réalisations sur <a href="https://github.com/Mouhlal" target="_blank" rel="noopener noreferrer" className="font-bold underline">GitHub</a> 
+          ou entrer en contact avec moi sur <a href="https://www.linkedin.com/in/akram-mouhlal-755b42291/" target="_blank" rel="noopener noreferrer" className="font-bold underline">LinkedIn</a>.
         </p>
       </motion.div>
     </div>
