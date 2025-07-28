@@ -66,7 +66,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Développeur Full Stack passionné, spécialisé en React.js, Laravel, et Tailwind CSS. 
+            Développeur Full Stack passionné, spécialisé en React.js, Laravel, et Django. 
             Je conçois des applications modernes et performantes, en cherchant toujours 
             à améliorer mes compétences et à contribuer à des projets innovants.
           </motion.p>
